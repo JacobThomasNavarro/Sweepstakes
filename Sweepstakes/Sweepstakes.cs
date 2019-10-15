@@ -9,13 +9,19 @@ namespace Sweepstakes
     public class Sweepstakes
     {
         public List<Contestant> contestants;
+        public Dictionary<string, object> sweepstakesDictionary;
+        public Random rng;
+        int registration;
         public Sweepstakes()
         {
             contestants = new List<Contestant>();
+            sweepstakesDictionary = new Dictionary<string, object>();
+            rng = new Random();
+            
         }
         public void RunSweepstakes() //master method
         {
-            for(int i = 0; i < 10; i++)
+            for(int i = 0; i < 5; i++)
             {
                 AddContestant();
             }
@@ -31,11 +37,16 @@ namespace Sweepstakes
             Console.WriteLine("Enter contestant's email address.");
             string email = Console.ReadLine();
 
-            Console.WriteLine("Enter contestant's registration number.");
-            int registration = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Registering customer's ID.");
+            registration = rng.Next(0, 100);
 
             Contestant newContestant = new Contestant(nameFirst, nameLast, email, registration);
-            contestants.Add(newContestant);
+            RegisterContestant(newContestant);
+        }
+        public void RegisterContestant(Contestant contestant)
+        {
+            sweepstakesDictionary.Add(registration.ToString(), contestant);
+            Console.WriteLine("Contestant Registered");
         }
     }
 }
