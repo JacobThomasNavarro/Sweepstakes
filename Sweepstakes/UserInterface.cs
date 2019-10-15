@@ -8,5 +8,9 @@ namespace Sweepstakes
 {
     static class UserInterface
     {
+        public static void ContestantInformation()
+        {
+            Console.WriteLine("Please enter the contestant's information.");
+        }
     }
 }
