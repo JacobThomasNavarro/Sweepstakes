@@ -12,13 +12,14 @@ namespace Sweepstakes
         public Random rng;
         int registration;
         public string name;
+        public string winner;
         public Sweepstakes(string name)
         {
             sweepstakesDictionary = new Dictionary<string, object>();
             rng = new Random();
             this.name = name;
         }
-        public void RunSweepstakes() //master method
+        public void RunSweepstakes()
         {
             for (int i = 0; i < 5; i++)
             {
@@ -47,22 +48,11 @@ namespace Sweepstakes
             sweepstakesDictionary.Add(registration.ToString(), contestant);
             Console.WriteLine("Contestant Registered");
         }
-        public void SweepstakesDecision()
+        public void PickWinner()
         {
-            int choice = UserInterface.GetSweepstakesManager();
+            List<string> randomContestant = new List<string>(sweepstakesDictionary.Keys);
 
-            switch (choice)
-            {
-                case 1:
-                    SweepstakesStackManager sweepstakesStackManager = new SweepstakesStackManager();
-                    MarketingFirm marketingFirm = new MarketingFirm(sweepstakesStackManager);
-                    break;
-
-                case 2:
-                    SweepstakesQueueManager sweepstakesQueueManager = new SweepstakesQueueManager();
-                    MarketingFirm marketingFirm2 = new MarketingFirm(sweepstakesQueueManager);
-                    break;
-            }
+            string randomKey = randomContestant[rng.Next(randomContestant.Count)];
         }
     }
 }
