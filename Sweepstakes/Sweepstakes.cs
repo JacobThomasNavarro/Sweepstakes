@@ -20,7 +20,7 @@ namespace Sweepstakes
         }
         public void RunSweepstakes() //master method
         {
-            for(int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 AddContestant();
             }
@@ -46,6 +46,23 @@ namespace Sweepstakes
         {
             sweepstakesDictionary.Add(registration.ToString(), contestant);
             Console.WriteLine("Contestant Registered");
+        }
+        public void SweepstakesDecision()
+        {
+            int choice = UserInterface.GetSweepstakesManager();
+
+            switch (choice)
+            {
+                case 1:
+                    SweepstakesStackManager sweepstakesStackManager = new SweepstakesStackManager();
+                    MarketingFirm marketingFirm = new MarketingFirm(sweepstakesStackManager);
+                    break;
+
+                case 2:
+                    SweepstakesQueueManager sweepstakesQueueManager = new SweepstakesQueueManager();
+                    MarketingFirm marketingFirm2 = new MarketingFirm(sweepstakesQueueManager);
+                    break;
+            }
         }
     }
 }
