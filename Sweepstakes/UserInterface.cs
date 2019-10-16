@@ -12,5 +12,11 @@ namespace Sweepstakes
         {
             Console.WriteLine("Please enter the contestant's information.");
         }
+        public static int GetSweepstakesManager()
+        {
+            Console.WriteLine("Select a Sweepstakes Manager to use.\n1)Sweepstakes Stack Manager\n2)Sweepstakes Queue Manager");
+            int choice = Int32.Parse(Console.ReadLine());
+            return choice;
+        }
     }
 }

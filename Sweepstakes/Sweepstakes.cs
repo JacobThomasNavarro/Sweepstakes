@@ -8,16 +8,15 @@ namespace Sweepstakes
 {
     public class Sweepstakes
     {
-        public List<Contestant> contestants;
         public Dictionary<string, object> sweepstakesDictionary;
         public Random rng;
         int registration;
-        public Sweepstakes()
+        public string name;
+        public Sweepstakes(string name)
         {
-            contestants = new List<Contestant>();
             sweepstakesDictionary = new Dictionary<string, object>();
             rng = new Random();
-            
+            this.name = name;
         }
         public void RunSweepstakes() //master method
         {

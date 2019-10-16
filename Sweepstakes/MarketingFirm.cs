@@ -8,25 +8,19 @@ namespace Sweepstakes
 {
     public class MarketingFirm
     {
-        public string sweepstakes1;
-        public string sweepstakes2;
-        public string sweepstakes3;
-        List<string> sweepstakes;
-        public MarketingFirm()
+        ISweepstakesManager sweepstakesStorageManager;
+        public MarketingFirm(ISweepstakesManager sweepstakesManager)
         {
-            sweepstakes = new List<string>() { };
+            sweepstakesStorageManager = sweepstakesManager;
         }
-        public void CreateSweepstakes()
+        public string CreateSweepstakes()
         {
-            Console.WriteLine("Add your first Sweepstake.");
-            sweepstakes1 = Console.ReadLine();
-            sweepstakes.Add(sweepstakes1);
-            Console.WriteLine("Add your second Sweepstake.");
-            sweepstakes2 = Console.ReadLine();
-            sweepstakes.Add(sweepstakes2);
-            Console.WriteLine("Add your third Sweepstake.");
-            sweepstakes3 = Console.ReadLine();
-            sweepstakes.Add(sweepstakes3);
+            // prompt user for name
+            Sweepstakes sweepstakes = new Sweepstakes("");
+        }
+        public void AddSweepstakes(Sweepstakes sweepstake)
+        {
+            sweepstakesStorageManager.InsertSweepstakes(sweepstake);
         }
     }
 }

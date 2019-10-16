@@ -10,8 +10,13 @@ namespace Sweepstakes
     {
         static void Main(string[] args)
         {
-            Sweepstakes sweepstakes = new Sweepstakes();
-            sweepstakes.RunSweepstakes();
+            int choice = UserInterface.GetSweepstakesManager();
+            switch (choice)
+            {
+                case 1: 
+
+            }
+            MarketingFirm marketingFirm = new MarketingFirm();
         }
     }
 }
