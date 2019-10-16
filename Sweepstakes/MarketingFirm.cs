@@ -13,10 +13,10 @@ namespace Sweepstakes
         {
             sweepstakesStorageManager = sweepstakesManager;
         }
-        public string CreateSweepstakes()
+        public void CreateSweepstakes()
         {
-            // prompt user for name
-            Sweepstakes sweepstakes = new Sweepstakes("");
+            string choice = UserInterface.SweepstakeName();
+            Sweepstakes sweepstakes = new Sweepstakes(choice);
         }
         public void AddSweepstakes(Sweepstakes sweepstake)
         {

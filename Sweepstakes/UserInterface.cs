@@ -18,5 +18,11 @@ namespace Sweepstakes
             int choice = Int32.Parse(Console.ReadLine());
             return choice;
         }
+        public static string SweepstakeName()
+        {
+            Console.WriteLine("Please enter a Sweepstake name.");
+            string choice = Console.ReadLine();
+            return choice;
+        }
     }
 }

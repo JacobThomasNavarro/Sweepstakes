@@ -13,10 +13,15 @@ namespace Sweepstakes
             int choice = UserInterface.GetSweepstakesManager();
             switch (choice)
             {
-                case 1: 
+                case 1:
+                    MarketingFirm marketingFirm = new MarketingFirm(SweepstakesStackManager);
+                    break;
 
+                case 2:
+                    MarketingFirm marketingfirm = new MarketingFirm(SweepstakesQueueManager);
+                    break;
             }
-            MarketingFirm marketingFirm = new MarketingFirm();
+            
         }
     }
 }
