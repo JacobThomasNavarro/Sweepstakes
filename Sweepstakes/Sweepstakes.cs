@@ -57,7 +57,10 @@ namespace Sweepstakes
         {
             List<string> randomContestant = new List<string>(sweepstakesDictionary.Keys);
             string randomKey = randomContestant[rng.Next(randomContestant.Count)];
-            Console.WriteLine("The winner is " + randomKey);
+        }
+        public void PrintContestant(Contestant contestant)
+        {
+            Console.WriteLine("The winner is " + contestant.firstName + contestant.lastName);
         }
     }
 }
