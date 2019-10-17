@@ -21,6 +21,11 @@ namespace Sweepstakes
         }
         public void RunSweepstakes()
         {
+            Contestants();
+
+        }
+        public void Contestants()
+        {
             for (int i = 0; i < 5; i++)
             {
                 AddContestant();
@@ -51,8 +56,8 @@ namespace Sweepstakes
         public void PickWinner()
         {
             List<string> randomContestant = new List<string>(sweepstakesDictionary.Keys);
-
             string randomKey = randomContestant[rng.Next(randomContestant.Count)];
+            Console.WriteLine("The winner is " + randomKey);
         }
     }
 }

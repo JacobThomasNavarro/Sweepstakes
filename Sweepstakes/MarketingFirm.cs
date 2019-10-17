@@ -13,6 +13,7 @@ namespace Sweepstakes
         {
             sweepstakesStorageManager = sweepstakesManager;
             CreateSweepstakes();
+            
         }
         public void CreateSweepstakes()
         {
@@ -20,5 +21,5 @@ namespace Sweepstakes
             Sweepstakes sweepstakes = new Sweepstakes(sweepstake);
             sweepstakesStorageManager.InsertSweepstakes(sweepstakes);
         }
-    }
+	}
 }

@@ -17,6 +17,8 @@ namespace Sweepstakes
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             theSweepstakes.Push(sweepstakes);
+            Console.WriteLine("Sweepstake has been added!");
+            GetSweepstakes();
         }
     }
 }
